@@ -1,0 +1,64 @@
+#botoesCompartilhar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 300px;
+    margin: 20px 0;
+}
+
+button {
+    margin: 5px;
+    padding: 10px;
+    font-size: 16px;
+    background: rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 300px;
+    box-sizing: border-box;
+}
+
+button:hover {
+    background-color: #1780a3;
+}
+
+#buttonShareWhatsApp {
+    background: linear-gradient(135deg, #25D366, #128C7E);
+}
+
+#buttonShareWhatsApp:hover {
+    background: linear-gradient(135deg, #128C7E, #25D366);
+}
+
+#buttonShareInstagram {
+    background: linear-gradient(135deg, #E4405F, #8A3AB9);
+}
+
+#buttonShareInstagram:hover {
+    background: linear-gradient(135deg, #8A3AB9, #E4405F);
+}
+
+@media (max-width: 768px) {
+    button {
+        width: 100%;
+        max-width: none;
+    }
+
+    #buttonShareWhatsApp,
+    #buttonShareInstagram {
+        width: 100%;
+        max-width: none;
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    button {
+        font-size: 14px;
+        padding: 8px;
+    }
+}
