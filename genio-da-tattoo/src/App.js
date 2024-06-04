@@ -1,24 +1,37 @@
-import React, { useState } from 'react';
-import InputSection from './components/InputSection';
-import ShareButtons from './components/ShareButtons';
+import React, { Component } from 'react';
+import '@fortawesome/fontawesome-free/css/all.min.css';
+import PrizeSection from './components/PrizeSection';
 import Header from './components/Header';
 import './App.css';
 
-const App = () => {
-  const [result, setResult] = useState('');
+class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { apiResponse: "" };
+  }
 
-  const handleResultUpdate = (newResult) => {
-    setResult(newResult);
-  };
+  callAPI() {
+    fetch("http://localhost:9000/api/testApi")
+      .then(res => res.text())
+      .then(res => this.setState({ apiResponse: res }));
+  }
 
-  return (
-    <div className="container">
-      <Header/>
-      <InputSection onResultUpdate={handleResultUpdate} />
-      {result && <div id="resultado">{result}</div>}
-      <ShareButtons />
-    </div>
-  );
-};
+  componentWillMount() {
+    this.callAPI();
+  }
+  render() {
+    return (
+      <div className="App">
+        <header className="App-header">
+          <Header />
+        </header>
+        <main>
+          <p className="App-intro">;{this.state.apiResponse}</p>
+          <PrizeSection />
+        </main>
+      </div>
+    );
+  }
+}
 
 export default App;

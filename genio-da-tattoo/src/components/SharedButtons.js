@@ -1,7 +1,7 @@
 import React from 'react';
 import './css/ShareButtons.css';
 
-const ShareButtons = () => (
+const SharedButtons = () => (
     <div id="botoesCompartilhar">
         <button id="buttonShareWhatsApp">
             <i className="fab fa-whatsapp"></i> Share on WhatsApp
@@ -12,4 +12,4 @@ const ShareButtons = () => (
     </div>
 );
 
-export default ShareButtons;
+export default SharedButtons;
