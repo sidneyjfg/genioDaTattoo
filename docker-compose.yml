@@ -1,0 +1,39 @@
+version: '3.8'
+
+services:
+  api:
+    build:
+      context: ./api
+      dockerfile: Dockerfile
+    ports:
+      - "9000:9000"
+    volumes:
+      - ./api:/usr/src/app
+    env_file:
+      - .env
+    depends_on:
+      - mysql
+
+  frontend:
+    build:
+      context: ./genio-da-tattoo
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./genio-da-tattoo:/usr/src/app
+    environment:
+      NODE_ENV: development
+
+  mysql:
+    image: mysql:5.7
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: fg01032003
+      MYSQL_DATABASE: geniodatattoo
+    volumes:
+      - mysql-data:/var/lib/mysql
+
+volumes:
+  mysql-data:

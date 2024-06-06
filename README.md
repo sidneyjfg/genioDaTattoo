@@ -20,4 +20,11 @@ instale o banco de dados Mysql
 `npm install mysql`
 
 Diretório api -> BackEnd
+
 Diretório genio-da-tattoo -> Front End em react
+
+
+
+# Limpeza de conteiner caso necessário
+## Limpeza Completa:
+- Os comandos `docker-compose down --volumes --rmi all` e `docker system prune -a` garantem que todas as instâncias anteriores sejam removidas, evitando conflitos.
